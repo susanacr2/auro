@@ -1002,14 +1002,38 @@ applyTheme(themeCheck.checked);
 syncIcons();
 
 // ── Form submit ──
-document.getElementById('heroForm').addEventListener('submit', function(e) {
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxccO0YJEzkb1S3p0wD7_tVweFotEKsqsm6PQSRwlc7u6Iuwazm983Wj4AIC8Byl5YrqA/exec"; // paste your deployed Apps Script URL here
+const FORM_SECRET     = "auro-2026-secret";
+
+document.getElementById('heroForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const b = document.getElementById('joinBtn');
-  b.textContent = '\u2713 \u00a1Ya est\u00e1s en la lista!';
-  b.classList.add('success');
+  const b     = document.getElementById('joinBtn');
+  const name  = document.getElementById('nameIn').value.trim();
+  const email = document.getElementById('emailIn').value.trim();
+  if (!name || !email) return;
+
+  b.textContent = 'Enviando...';
   b.disabled = true;
-  document.getElementById('nameIn').disabled  = true;
-  document.getElementById('emailIn').disabled = true;
+
+  try {
+    if (APPS_SCRIPT_URL !== 'YOUR_SCRIPT_URL') {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ name, email, secret: FORM_SECRET, source: 'website' }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    b.textContent = '\u2713 \u00a1Ya est\u00e1s en la lista!';
+    b.classList.add('success');
+    document.getElementById('nameIn').disabled  = true;
+    document.getElementById('emailIn').disabled = true;
+  } catch (err) {
+    // Even if fetch fails, show success to user — entry may still have saved
+    b.textContent = '\u2713 \u00a1Ya est\u00e1s en la lista!';
+    b.classList.add('success');
+    document.getElementById('nameIn').disabled  = true;
+    document.getElementById('emailIn').disabled = true;
+  }
 });
 </script>
 </body>
