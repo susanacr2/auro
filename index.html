@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Auro Expand — Aprende el inglés que necesitas para tu trabajo</title>
+<title>Auro Expand - Aprende el ingles que necesitas para tu trabajo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -106,17 +106,12 @@ nav {
   transition: background 0.35s, border-color 0.35s;
 }
 
-.nav-logo { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; }
-.nav-wordmark {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; color: var(--text);
-  line-height: 1; transition: color 0.35s;
-}
-.nav-sub {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300; font-size: 0.58rem; letter-spacing: 0.24em;
-  color: var(--text-muted); text-transform: uppercase; margin-top: 1px;
-  transition: color 0.35s;
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-right { display: flex; align-items: center; gap: 1.25rem; }
@@ -282,6 +277,7 @@ h1 .grad {
   position: relative; z-index: 2;
   filter: drop-shadow(var(--shadow-phone));
   transition: filter 0.35s;
+  isolation: isolate;
 }
 
 /* floating badges */
@@ -294,6 +290,7 @@ h1 .grad {
   font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 600;
   white-space: nowrap; box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   transition: background 0.35s;
+  z-index: 10;
 }
 [data-theme="light"] .float-badge { box-shadow: 0 8px 30px rgba(129,88,255,0.12); }
 
@@ -457,39 +454,7 @@ footer {
 <!-- ══ NAV ══ -->
 <nav>
   <a class="nav-logo" href="#">
-    <!-- Orb ring mini -->
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="nl" x1="0.5" y1="0" x2="0.5" y2="1">
-          <stop offset="0%" stop-color="#70B8FF"/>
-          <stop offset="100%" stop-color="#8158FF"/>
-        </linearGradient>
-        <radialGradient id="nls" cx="34%" cy="26%" r="72%">
-          <stop offset="0%" stop-color="#c4e8ff" stop-opacity="0.9"/>
-          <stop offset="100%" stop-color="#5030cc" stop-opacity="0.1"/>
-        </radialGradient>
-        <radialGradient id="nlg" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#8158FF" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="#8158FF" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="nlf" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="3" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <mask id="nlm">
-          <circle cx="14" cy="14" r="11" fill="white"/>
-          <circle cx="14" cy="14" r="6" fill="black"/>
-        </mask>
-      </defs>
-      <ellipse cx="14" cy="14" rx="14" ry="14" fill="url(#nlg)" filter="url(#nlf)"/>
-      <circle cx="14" cy="14" r="11" fill="url(#nl)" mask="url(#nlm)" filter="url(#nlf)"/>
-      <circle cx="14" cy="14" r="11" fill="url(#nls)" mask="url(#nlm)" opacity="0.85"/>
-      <circle cx="14" cy="14" r="11" fill="none" stroke="#70B8FF" stroke-width="0.5" opacity="0.3"/>
-    </svg>
-    <div>
-      <div class="nav-wordmark">AURO</div>
-      <div class="nav-sub">Expand</div>
-    </div>
+    <img src="AURO_Expand.png" alt="Auro Expand"/>
   </a>
 
   <div class="nav-right">
@@ -519,7 +484,7 @@ footer {
     <h1>El inglés que<br/>necesitas para<br/><span class="grad">tu trabajo.</span></h1>
 
     <p class="hero-desc">
-      Lecciones cortas enfocadas en tu trabajo real — limpieza, cocina, construcción. Frases reales, situaciones reales. Sin tiempo perdido.
+      Lecciones cortas enfocadas en tu trabajo real: limpieza, cocina, construcción. Frases reales, situaciones reales. Sin tiempo perdido.
     </p>
 
     <form class="waitlist-form" id="heroForm">
@@ -638,7 +603,7 @@ footer {
       </svg>
     </div>
     <div class="feat-title">Solo lo que necesitas</div>
-    <div class="feat-desc">Sin vocabulario innecesario. Cada frase viene de situaciones reales de trabajo — limpieza, cocina, construcción — para que aprendas lo que importa para tu empleo.</div>
+    <div class="feat-desc">Sin vocabulario innecesario. Cada frase viene de situaciones reales de trabajo: limpieza, cocina, construcción. Aprendes lo que importa para tu empleo.</div>
   </div>
   <div class="feat-card">
     <div class="feat-icon">
@@ -658,7 +623,7 @@ footer {
       </svg>
     </div>
     <div class="feat-title">Hecho para tu comunidad</div>
-    <div class="feat-desc">Comenzamos en español y vamos a más idiomas. Diseñado con trabajadores inmigrantes — no para profesores, no para turistas. Para ti y para avanzar.</div>
+    <div class="feat-desc">Comenzamos en español y vamos a más idiomas. Diseñado con trabajadores inmigrantes, no para profesores ni turistas. Para ti y para avanzar.</div>
   </div>
 </section>
 
